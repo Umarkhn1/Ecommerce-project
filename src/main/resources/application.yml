@@ -1,0 +1,41 @@
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,prometheus
+      base-path: /actuator
+  health:
+    redis:
+      enabled: false
+
+spring:
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+  datasource:
+    url: jdbc:h2:file:C:/Users/ACER/test;DB_CLOSE_ON_EXIT=FALSE;IFEXISTS=FALSE
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  jpa:
+    defer-datasource-initialization: true
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+  sql:
+    init:
+      mode: always
+      platform: h2
+      data-locations: classpath:data.sql
+  cache:
+    type: none
+
+server:
+  port: 8080
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
