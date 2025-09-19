@@ -57,13 +57,19 @@ Docker
 Сборка Docker-образа
 docker build -t ecommerce-app .
 Запуск контейнера
+
 docker run -p 8080:8080 --name ecommerce-app ecommerce-app
+
 Структура проекта
 src/main/java/com/example/ecommerce
 ├─ controller/   # REST контроллеры
+
 ├─ entity/       # JPA сущности
+
 ├─ repository/   # Spring Data JPA репозитории
+
 ├─ security/     # Конфигурация Spring Security, JWT
+
 ├─ service/      # Сервисы
 
 Клонирование репозитория
